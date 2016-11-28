@@ -1,0 +1,94 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            style="@style/QuestionStyle"
+            android:text="@string/ratingquestion5_1"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg_rq5_1"
+            android:orientation="vertical">
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_not_applicable"
+                android:id="@+id/rb_answer1_1"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_very_poor"
+                android:id="@+id/rb_answer1_2"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_poor"
+                android:id="@+id/rb_answer1_3"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_average"
+                android:id="@+id/rb_answer1_4"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_good"
+                android:id="@+id/rb_answer1_5"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_very_good"
+                android:id="@+id/rb_answer1_6"/>
+        </RadioGroup>
+        <TextView
+            style="@style/QuestionStyle"
+            android:text="@string/ratingquestion5_2"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rg_rq5_2"
+            android:orientation="vertical">
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_not_applicable"
+                android:id="@+id/rb_answer2_1"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_very_poor"
+                android:id="@+id/rb_answer2_2"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_poor"
+                android:id="@+id/rb_answer2_3"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_average"
+                android:id="@+id/rb_answer2_4"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_good"
+                android:id="@+id/rb_answer2_5"/>
+            <RadioButton
+                style="@style/AnswerStyle"
+                android:text="@string/answer_very_good"
+                android:id="@+id/rb_answer2_6"/>
+        </RadioGroup>
+        <TextView
+            style="@style/QuestionStyle"
+            android:text="@string/ratingquestion5_3"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="6"
+            android:textSize="20sp"
+            android:hint="Please input here:"
+            android:gravity="top"
+            android:id="@+id/et_comment"/>
+
+    </LinearLayout>
+</ScrollView>
+
+
+
+

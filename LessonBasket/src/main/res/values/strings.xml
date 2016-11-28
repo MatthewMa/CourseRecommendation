@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">LessonBasket</string>
+    <string name="account">Email Address</string>
+    <string name="password">Password</string>
+    <string name="auto_save_password">Remember Me</string>
+    <string name="login">Login</string>
+    <string name="more_theme">More Themes</string>
+    <string name="theme_blue">Animal Theme</string>
+    <string name="theme_red">Car Theme</string>
+    <string name="theme_green">Autumn Theme</string>
+    <string name="theme_custom">Customize Theme</string>
+    <string name="btn_rating">Rating</string>
+    <string name="btn_account">Account</string>
+    <string name="btn_search">Search</string>
+    <string name="btn_share">Share</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ratingquestion1_1">1) I have found the course intellectually challenging and stimulating.</string>
+    <string name="answer_not_applicable">Not Applicable</string>
+    <string name="answer_strongly_disagree">Strongly Disagree</string>
+    <string name="answer_disagree">Disagree</string>
+    <string name="answer_neutral">Neutral</string>
+    <string name="answer_agree">Agree</string>
+    <string name="answer_strongly_agree">Strongly Agree</string>
+    <string name="ratingquestion1_2">2) I have learned something which I consider valuable.</string>
+    <string name="ratingquestion1_3">3) My interest in the subject has increased as a consequence of this course.</string>
+    <string name="ratingquestion1_4">4) I have learned and understood the subject materials of this course.</string>
+    <string name="ratingquestion2_1">5) Instructor was enthusiastic about teaching the course.</string>
+    <string name="ratingquestion2_2">6) Instructor was dynamic and energetic in conducting the course.</string>
+    <string name="ratingquestion2_3">7) Instructor enhanced presentations with the use of humour.</string>
+    <string name="ratingquestion2_4">8) Instructor\'s style of presentation held my interest during class.</string>
+    <string name="ratingquestion3_1">9) Instructor\'s explanations were clear.</string>
+    <string name="ratingquestion3_2">10) Course materials were well prepared and carefully explained.</string>
+    <string name="ratingquestion3_3">11) Proposed objectives agreed with those actually taught so I knew where the course was going.</string>
+    <string name="ratingquestion3_4">12) Instructor gave lectures that facilitated taking notes.</string>
+    <string name="ratingquestion4_1">13) Compared with other courses I have had at the U of S, I would say this course is:</string>
+    <string name="answer_very_poor">Very Poor</string>
+    <string name="answer_poor">Poor</string>
+    <string name="answer_average">Average</string>
+    <string name="answer_good">Good</string>
+    <string name="answer_very_good">Very Good</string>
+    <string name="ratingquestion4_2">14) Compared with other instructors I have had at the U of S, I would say this instructor is:</string>
+    <string name="ratingquestion4_3">15) As an overall rating, I would say the instructor is:</string>
+    <string name="ratingquestion4_4">16) Should this instructor be nominated for an outstanding teaching award?</string>
+    <string name="ratingquestion5_1">17) Quality of the textbook:</string>
+    <string name="ratingquestion5_2">18) Quality of the classroom and presentation facilities:</string>
+    <string name="ratingquestion5_3">19) Please provide any additional comments or feedback.</string>
+</resources>

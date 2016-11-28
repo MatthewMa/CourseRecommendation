@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+                android:id="@+id/ll_bg">
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/number_1"
+        android:layout_margin="8dp"
+        android:id="@+id/iv_rank"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:textColor="@android:color/black"
+        android:text="Matthew"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:id="@+id/tv_name"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/holo_red_light"
+        android:text="203"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:id="@+id/tv_karma"
+        />
+
+</LinearLayout>

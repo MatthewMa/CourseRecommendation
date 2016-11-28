@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/activity_recommend"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_videoview"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:id="@+id/vv_intro"
+        />
+        </LinearLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="2"
+            android:layout_margin="5dp">
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Course Name:"
+                          android:id="@+id/textView"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="22sp"
+                          android:textColor="@android:color/black"
+                          android:text="Social Computing"
+                          android:layout_marginLeft="10dp"
+                          android:layout_column="2"
+                          android:id="@+id/textView2"/>
+            </TableRow>
+            <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="CRN:"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="22sp"
+                      android:textColor="@android:color/black"
+                      android:text="868"
+                      android:layout_marginLeft="10dp"
+                      android:layout_column="2"/>
+        </TableRow>
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Instructor:"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="22sp"
+                          android:textColor="@android:color/black"
+                          android:text="Julita I Vassileva"
+                          android:layout_marginLeft="10dp"
+                          android:layout_column="2"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Credit:"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="22sp"
+                          android:textColor="@android:color/black"
+                          android:text="3.0"
+                          android:layout_marginLeft="10dp"
+                          android:layout_column="2"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Type:"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="22sp"
+                          android:textColor="@android:color/black"
+                          android:text="LEC"
+                          android:layout_marginLeft="10dp"
+                          android:layout_column="2"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Days:"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="22sp"
+                          android:textColor="@android:color/black"
+                          android:text="Wednesday"
+                          android:layout_marginLeft="10dp"
+                          android:layout_column="2"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Time:"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="22sp"
+                          android:textColor="@android:color/black"
+                          android:text="5:00pm-7:00pm"
+                          android:layout_marginLeft="10dp"
+                          android:layout_column="2"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Avail/Capacity:"/>
+
+                <ProgressBar android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginLeft="10dp"
+                             android:layout_marginRight="10dp"
+                          android:layout_column="2"
+                    android:max="20"
+                    android:progress="8"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_gravity="center_vertical"/>
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="8/20"
+                        android:paddingRight="15dp"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Date:"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="22sp"
+                          android:textColor="@android:color/black"
+                          android:text="06 Sep.-08 Dec."
+                          android:layout_marginLeft="10dp"
+                          android:layout_column="2"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Location:"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="22sp"
+                          android:textColor="@android:color/black"
+                          android:text="Thorv S386"
+                          android:layout_marginLeft="10dp"
+                          android:layout_column="2"/>
+            </TableRow>
+            <TableRow>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="25sp"
+                          android:textColor="@android:color/black"
+                          android:textStyle="bold"
+                          android:text="Attribute:"/>
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                              android:layout_column="2"
+                              android:orientation="vertical"
+                    >
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:textSize="22sp"
+                          android:textColor="@android:color/black"
+                          android:text="Audit Allowed with Permission"
+                          android:layout_marginLeft="10dp"
+                            android:drawableLeft="@drawable/checkbox_selected_press"
+                            android:drawablePadding="5dp"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:textSize="22sp"
+                              android:textColor="@android:color/black"
+                              android:text="On Campus Student Fees"
+                              android:layout_marginLeft="10dp"
+                              android:drawableLeft="@drawable/checkbox_selected_press"
+                              android:drawablePadding="5dp"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:textSize="22sp"
+                              android:textColor="@android:color/black"
+                              android:text="Fee - Graduate Studies"
+                              android:layout_marginLeft="10dp"
+                              android:drawableLeft="@drawable/checkbox_selected_press"
+                              android:drawablePadding="5dp"/>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button style="@style/GreenButtonStyle"
+                    android:id="@+id/btn_back"
+                    android:text="BACK"
+                    android:layout_margin="5dp"/>
+            <Button style="@style/GreenButtonStyle"
+                    android:id="@+id/btn_select"
+                    android:text="Select"
+                    android:layout_margin="5dp"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
