@@ -1,10 +1,16 @@
 package matthew.pecompass.components.fragments;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +28,8 @@ import android.widget.ProgressBar;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import java.util.zip.Inflater;
+
 import matthew.pecompass.R;
 import matthew.pecompass.components.Model.Course;
 import matthew.pecompass.components.Model.Courses;
@@ -33,6 +41,7 @@ import static matthew.pecompass.components.Model.Courses.allCourses;
 
 public class ShareFragment extends Fragment {
 
+    private static final int REQUEST_PHONE_CALL = 0;
     private GridView gv_shared;
     private LinearLayout tl_info;
     private AutoCompleteTextView atv_coursename;
@@ -49,6 +58,8 @@ public class ShareFragment extends Fragment {
     private TextView tv_coursedays;
     private ProgressBar pb_courseavail;
     private TextView tv_courseavail;
+    private String coursename;
+    private String coursemsg;
 
 
     @Nullable
@@ -134,6 +145,8 @@ public class ShareFragment extends Fragment {
         gv_shared.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                coursename = atv_coursename.getText().toString();
+                coursemsg = et_description.getText().toString();
                 switch (position){
                     case 0:
                         //sendmessage
@@ -181,11 +194,38 @@ public class ShareFragment extends Fragment {
     }
 
     private void callPhone() {
-
+        final AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
+        builder.setTitle("Please input phone number:");
+        View v= View.inflate(getActivity(),R.layout.alertdialog_phoenumber,null);
+        EditText et_number= (EditText) v.findViewById(R.id.et_phonenumber);
+        final String number=et_number.getText().toString();
+        builder.setView(v);
+        requestPermissions(new String[]{Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
+        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if(getActivity().checkSelfPermission(Manifest.permission.CALL_PHONE)==
+                            PackageManager.PERMISSION_GRANTED) {
+                        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+                        startActivity(intent);
+                    }
+                }else{
+                    Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+                    startActivity(intent);
+                }
+            }
+        }).setNegativeButton("Cancel",null);
+        builder.create().show();
     }
 
     private void sendMessage() {
-
+        Uri smsToUri = Uri.parse("smsto:");
+        Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
+        intent.putExtra("sms_body", "Hi,I want to recommend a course:"+coursename+" for you,if " +
+                "you " +
+                "choose, both of us can get free karma!\n"+coursemsg);
+        startActivity(intent);
     }
 
     @Override

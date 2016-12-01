@@ -32,5 +32,6 @@
         <activity android:name=".components.activities.RewardActivity">
         </activity>
     </application>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 </manifest>
