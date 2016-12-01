@@ -26,7 +26,7 @@ import matthew.pecompass.components.views.NoCollisionViewPager;
 
 public class IndexActivity extends BaseActivity {
 
-    private NoCollisionViewPager vp_pagers;
+    public NoCollisionViewPager vp_pagers;
     private RadioGroup rg_group;
     private RadioButton rb_rate;
     private RadioButton rb_account;

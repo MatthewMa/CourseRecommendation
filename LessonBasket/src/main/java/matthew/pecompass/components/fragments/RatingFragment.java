@@ -28,6 +28,7 @@ import matthew.pecompass.R;
 import matthew.pecompass.components.Constants.Constants;
 import matthew.pecompass.components.Model.Courses;
 import matthew.pecompass.components.Model.HighestRatedCourse;
+import matthew.pecompass.components.Model.Karma;
 import matthew.pecompass.components.Model.UnratedCourse;
 import matthew.pecompass.components.activities.RecommendActivity;
 import matthew.pecompass.components.utils.Utils;
@@ -64,7 +65,8 @@ public class RatingFragment extends Fragment {
                     "finished the rating and get 2 karma, please check your account!",R.drawable
                     .rating_congra,0);
             //add rated courses:
-
+            //add currKarma
+            Karma.currKarma+=2;
             getActivity().getIntent().putExtra("finishUnratedCrn",-1);
         }
         spinner_condition.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout

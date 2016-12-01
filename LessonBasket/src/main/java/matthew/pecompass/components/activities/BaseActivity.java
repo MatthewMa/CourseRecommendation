@@ -22,8 +22,8 @@ public abstract class BaseActivity extends FragmentActivity {
         setContentView(getLayoutResource());
         View root = findViewById(android.R.id.content);
         initView();
-        initListener();
         initData();
+        initListener();
     }
 
     protected abstract void initData();

@@ -19,5 +19,43 @@
         android:layout_height="0dp"
         android:id="@+id/lv_topkarma"
         android:layout_weight="1"></ListView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:text="Right now you have 20 karma!"
+        android:gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:background="@android:color/holo_blue_bright"
+        android:id="@+id/tv_currkarma"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="24sp"
+        android:text="Weekly Karma Tasks(Get Free Karma every week!)"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"/>
+    <ExpandableListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:id="@+id/el_tasks"></ExpandableListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp">
+        <Button
+            style="@style/BlueButtonStyle"
+            android:text="Account Setting"
+            android:id="@+id/btn_setting"/>
+        <Button style="@style/BlueButtonStyle"
+                android:text="Going Shopping"
+                android:id="@+id/btn_reward"/>
+    </LinearLayout>
+
 
 </LinearLayout>

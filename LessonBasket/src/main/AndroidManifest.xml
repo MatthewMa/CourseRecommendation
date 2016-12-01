@@ -2,6 +2,9 @@
 <manifest package="matthew.pecompass"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
@@ -26,8 +29,8 @@
         </activity>
         <activity android:name=".components.activities.RecommendActivity">
         </activity>
+        <activity android:name=".components.activities.RewardActivity">
+        </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>

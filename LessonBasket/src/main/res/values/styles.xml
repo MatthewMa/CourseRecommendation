@@ -76,5 +76,14 @@
         <item name="android:textSize">22.0sp</item>
         <item name="android:layout_weight">1</item>
     </style>
+    <style name="BlueButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">@drawable/selector_loginbtn</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">22.0sp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
 
 </resources>

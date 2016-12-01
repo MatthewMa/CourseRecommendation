@@ -36,8 +36,8 @@ public class QuestionFiveFragment extends BaseQuestionFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_question_five, container, false);
-        rg_rq5_1= (RadioGroup) v.findViewById(rg_rq4_1);
-        rg_rq5_2= (RadioGroup) v.findViewById(rg_rq4_2);
+        rg_rq5_1= (RadioGroup) v.findViewById(R.id.rg_rq5_1);
+        rg_rq5_2= (RadioGroup) v.findViewById(R.id.rg_rq5_2);
         et_comment= (EditText) v.findViewById(R.id.et_comment);
         return v;
     }

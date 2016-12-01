@@ -57,7 +57,9 @@ public class RatingActivity extends BaseActivity {
         tv_partition.setText(Courses.partitions[currentScreen]);
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
         transaction.replace(R.id.fragmentContainer, fragments.get(currentScreen));
         transaction.commit();
 

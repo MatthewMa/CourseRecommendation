@@ -23,9 +23,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import matthew.pecompass.R;
+import matthew.pecompass.components.Model.Course;
 import matthew.pecompass.components.Model.Courses;
 import matthew.pecompass.components.Model.HighestRatedCourse;
 import matthew.pecompass.components.Model.Karma;
+import matthew.pecompass.components.Model.KarmaTask;
 import matthew.pecompass.components.Model.UnratedCourse;
 import matthew.pecompass.components.Model.User;
 import matthew.pecompass.components.utils.Utils;
@@ -73,6 +75,66 @@ public class SplashActivity extends AppCompatActivity {
         makeCourses();
         Karma.highestKarmaUsers=new ArrayList<>();
         makeHighestKarmaUsers();
+        Karma.taskNames=new ArrayList<>();
+        Karma.karmaTasks=new HashMap<>();
+        makeKarmaTasks();
+        Courses.allCourses=new HashMap<>();
+        makeAllCourses();
+    }
+
+    private void makeAllCourses() {
+        for (int i = 0; i < Courses.allCourseCrns.length; i++) {
+            String days="";
+            int ran= (int) Math.round(Math.random()*7);
+            int avail=0;
+            switch (ran){
+                case 0:
+                case 1:
+                    days="Monday";
+                    avail=3;
+                    break;
+                case 2:
+                    days="Tuesday";
+                    avail=5;
+                    break;
+                case 3:
+                    days="Wednesday";
+                    avail=7;
+                    break;
+                case 4:
+                    days="Thursday";
+                    avail=10;
+                    break;
+                case 5:
+                    days="Friday";
+                    avail=12;
+                    break;
+                default:
+                    days="Saturday";
+                    avail=14;
+                    break;
+            }
+            Courses.allCourses.put(Courses.allCourseNames.get(i),new Course(Courses
+                    .allCourseCrns[i],Courses.allCourseInstructors[i],3,days,"5:00pm-7:50pm",
+                    avail,20,"06 Sep.-08 Dec.","Throv S386",Courses.allCourseRates[i]));
+        }
+    }
+
+    private void makeKarmaTasks() {
+        Karma.taskNames.add("Friend Recommendation");
+        Karma.taskNames.add("System Recommendation");
+        List<KarmaTask> list=new ArrayList<>();
+        for(int i=0;i<Karma.friendkarmaTasks.length;i++){
+            KarmaTask task=new KarmaTask(Karma.friendkarmaTasks[i],Karma.friendKarmaRewards[i]);
+            list.add(task);
+        }
+        Karma.karmaTasks.put(Karma.taskNames.get(0),list);
+        List<KarmaTask> list1=new ArrayList<>();
+        for(int i=0;i<Karma.systemKarmaTasks.length;i++){
+            KarmaTask task=new KarmaTask(Karma.systemKarmaTasks[i],Karma.systemKarmaRewards[i]);
+            list1.add(task);
+        }
+        Karma.karmaTasks.put(Karma.taskNames.get(1),list1);
     }
 
     private void makeCourses() {

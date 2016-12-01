@@ -1,13 +1,288 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="matthew.pecompass.components.fragments.ShareFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+            android:orientation="vertical"
+    android:background="@drawable/main_bg">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Share Fragment"/>
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="30sp"
+        android:text="Sharing Course"
+        android:gravity="center_horizontal"
+        android:layout_margin="5dp"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_margin="5dp">
+        <TextView
+            android:layout_width="1px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingLeft="15.0dip"
+            android:text="Course Name:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+        <AutoCompleteTextView
+            android:id="@+id/atv_coursename"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_weight="3"
+            android:inputType="textPersonName"
+            android:maxLength="40"
+            android:paddingLeft="10.0dip"
+            android:textColor="#ff545454"
+            android:textSize="18sp"
+            android:background="@drawable/shape_bg"
+            android:completionThreshold="1"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_margin="5dp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="1px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingLeft="15.0dip"
+            android:text="Message:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:id="@+id/textView3"/>
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_weight="3"
+            android:maxLength="20"
+            android:paddingLeft="10.0dip"
+            android:textColor="#ff545454"
+            android:textSize="18sp"
+            android:lines="5"
+            android:background="@drawable/shape_bg"
+            android:gravity="top"
+            android:hint="Please input the message you want to share:"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tl_info"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:visibility="gone">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="2"
+
+        >
+        <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="Course Name:"
+                      android:id="@+id/textView"
+                    />
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="22sp"
+                      android:textColor="@android:color/black"
+                      android:text="Social Computing"
+                      android:layout_marginLeft="10dp"
+                      android:layout_column="2"
+                      android:id="@+id/tv_coursename"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="CRN:"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="22sp"
+                      android:textColor="@android:color/black"
+                      android:text="868"
+                      android:layout_marginLeft="10dp"
+                      android:layout_column="2"
+                    android:id="@+id/tv_coursecrn"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="Instructor:"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="22sp"
+                      android:textColor="@android:color/black"
+                      android:text="Julita I Vassileva"
+                      android:layout_marginLeft="10dp"
+                      android:layout_column="2"
+                    android:id="@+id/tv_instructorname"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="Credit:"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="22sp"
+                      android:textColor="@android:color/black"
+                      android:text="3.0"
+                      android:layout_marginLeft="10dp"
+                      android:layout_column="2"
+                android:id="@+id/tv_coursecredit"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="Days:"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="22sp"
+                      android:textColor="@android:color/black"
+                      android:text="Wednesday"
+                      android:layout_marginLeft="10dp"
+                      android:layout_column="2"
+                android:id="@+id/tv_coursedays"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="Time:"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="22sp"
+                      android:textColor="@android:color/black"
+                      android:text="5:00pm-7:50pm"
+                      android:layout_marginLeft="10dp"
+                      android:layout_column="2"
+                    android:id="@+id/tv_coursetime"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="Avail/Capacity:"/>
+
+            <ProgressBar android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginLeft="10dp"
+                         android:layout_marginRight="10dp"
+                         android:layout_column="2"
+                         android:max="20"
+                         android:progress="8"
+                         style="@android:style/Widget.ProgressBar.Horizontal"
+                         android:layout_gravity="center_vertical"
+                    android:id="@+id/pb_courseavail"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="8/20"
+                      android:paddingRight="15dp"
+                    android:id="@+id/tv_courseavail"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="Date:"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="22sp"
+                      android:textColor="@android:color/black"
+                      android:text="06 Sep.-08 Dec."
+                      android:layout_marginLeft="10dp"
+                      android:layout_column="2"
+                    android:id="@+id/tv_coursedate"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="25sp"
+                      android:textColor="@android:color/black"
+                      android:textStyle="bold"
+                      android:text="Location:"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textSize="22sp"
+                      android:textColor="@android:color/black"
+                      android:text="Thorv S386"
+                      android:layout_marginLeft="10dp"
+                      android:layout_column="2"
+                    android:id="@+id/tv_courselocation"/>
+        </TableRow>
+    </TableLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="30sp"
+        android:text="Sharing Method"
+        android:gravity="center_horizontal"
+        android:layout_margin="5dp"/>
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gv_shared"
+        android:numColumns="3"
+        android:horizontalSpacing="20dp"
+        android:descendantFocusability="blocksDescendants"></GridView>
+    </LinearLayout>
+</LinearLayout>
