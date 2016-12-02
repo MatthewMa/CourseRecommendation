@@ -35,6 +35,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import matthew.pecompass.R;
+import matthew.pecompass.components.Constants.Constants;
 import matthew.pecompass.components.Model.Courses;
 import matthew.pecompass.components.Model.HighestRatedCourse;
 import matthew.pecompass.components.Model.Karma;
@@ -64,6 +65,7 @@ public class IndexActivity extends BaseActivity {
     private ImageButton ib_notification;
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
+    private TextView tv_pager;
     @Override
     protected void initData() {
 
@@ -165,8 +167,9 @@ public class IndexActivity extends BaseActivity {
             @Override
             public void run() {
                 sp=getSharedPreferences("config",MODE_PRIVATE);
-                if(sp.getBoolean("show_popoup", true)) {
+                if(sp.getBoolean("show_popup", true)&& Constants.show_popup) {
                     showPopUp();
+                    Constants.show_popup=false;
                 }
             }
         });
@@ -177,12 +180,14 @@ public class IndexActivity extends BaseActivity {
         ts_notification= (TextSwitcher) v.findViewById(R.id.ts_notification);
         do_not_show= (CheckBox) v.findViewById(R.id.do_not_show);
         btn_start= (Button) v.findViewById(R.id.btn_start);
+        tv_pager= (TextView) v.findViewById(R.id.tv_pager);
         updateBtnStart();
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 currIndex++;
                 updateBtnStart();
+                tv_pager.setText((currIndex+1)+"/"+Notification.notifications.size());
                 if(currIndex<Notification.notifications.size()){
                     //next page
                     ts_notification.setText(Notification.notifications.get(currIndex));
@@ -193,12 +198,13 @@ public class IndexActivity extends BaseActivity {
                 }
             }
         });
-        do_not_show.setChecked(!sp.getBoolean("show_popoup", true));
+        do_not_show.setChecked(!sp.getBoolean("show_popup", true));
         do_not_show.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 editor=sp.edit();
                 editor.putBoolean("show_popup",!isChecked);
+                editor.commit();
             }
         });
         ts_notification.setFactory(new ViewSwitcher.ViewFactory() {
@@ -216,6 +222,7 @@ public class IndexActivity extends BaseActivity {
         ts_notification.setInAnimation(in);
         ts_notification.setOutAnimation(out);
         ts_notification.setText(Notification.notifications.get(currIndex));
+        tv_pager.setText((currIndex+1)+"/"+Notification.notifications.size());
         popupWindow = new PopupWindow(v,600,400);
         popupWindow.setFocusable(true);
         popupWindow.setBackgroundDrawable(new ColorDrawable(0x00000000));
@@ -239,7 +246,7 @@ public class IndexActivity extends BaseActivity {
     }
 
     private void updateBtnStart() {
-        if(currIndex<Notification.notifications.size()){
+        if(currIndex<Notification.notifications.size()-1){
             btn_start.setText("NEXT");
         }else{
             btn_start.setText("GET STARTED");

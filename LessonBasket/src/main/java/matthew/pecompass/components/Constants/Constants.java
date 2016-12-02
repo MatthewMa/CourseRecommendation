@@ -20,6 +20,8 @@ public class Constants {
     public static String USER_EMAIL;
     public static String USER_PASSWORD;
 
+    //showPopUpwindow
+    public static boolean show_popup=true;
 
 
 }
