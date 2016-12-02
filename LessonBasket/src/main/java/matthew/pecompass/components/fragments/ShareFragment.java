@@ -60,6 +60,7 @@ public class ShareFragment extends Fragment {
     private TextView tv_courseavail;
     private String coursename;
     private String coursemsg;
+    private TextView tv_sharetimes;
 
 
     @Nullable
@@ -78,6 +79,8 @@ public class ShareFragment extends Fragment {
         tv_coursedays= (TextView) v.findViewById(R.id.tv_coursedays);
         pb_courseavail= (ProgressBar) v.findViewById(R.id.pb_courseavail);
         tv_courseavail= (TextView) v.findViewById(R.id.tv_courseavail);
+        tv_sharetimes= (TextView) v.findViewById(R.id.tv_sharetimes);
+        tv_sharetimes.setText("You have "+Courses.shareTimes+" share right left!");
         atv_coursename.requestFocus();
         atv_coursename.requestFocusFromTouch();
         atv_coursename.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout
@@ -175,7 +178,7 @@ public class ShareFragment extends Fragment {
                 }
             }
         });
-
+        tv_sharetimes.setText("You have "+Courses.shareTimes+" share right left!");
         return v;
     }
 
@@ -209,10 +212,12 @@ public class ShareFragment extends Fragment {
                             PackageManager.PERMISSION_GRANTED) {
                         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
                         startActivity(intent);
+                        Courses.shareTimes-=1;
                     }
                 }else{
                     Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
                     startActivity(intent);
+                    Courses.shareTimes-=1;
                 }
             }
         }).setNegativeButton("Cancel",null);
@@ -226,11 +231,13 @@ public class ShareFragment extends Fragment {
                 "you " +
                 "choose, both of us can get free karma!\n"+coursemsg);
         startActivity(intent);
+        Courses.shareTimes-=1;
     }
 
     @Override
     public void onPause() {
         atv_coursename.setText("");
+        et_description.setText("");
         super.onPause();
     }
 }

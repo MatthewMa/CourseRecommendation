@@ -46,4 +46,5 @@
     <string name="ratingquestion5_1">17) Quality of the textbook:</string>
     <string name="ratingquestion5_2">18) Quality of the classroom and presentation facilities:</string>
     <string name="ratingquestion5_3">19) Please provide any additional comments or feedback.</string>
+    <string name="do_not_show">Do not show next time</string>
 </resources>

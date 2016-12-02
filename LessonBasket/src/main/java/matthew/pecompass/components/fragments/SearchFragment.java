@@ -199,7 +199,7 @@ public class SearchFragment extends Fragment {
             filterDateList.clear();
             for (String sortModel : SourceDateList) {
                 String name = sortModel;
-                if (name.indexOf(filterStr.toString()) != -1 ) {
+                if (name.toLowerCase().indexOf(filterStr.toString().toLowerCase()) != -1 ) {
                     filterDateList.add(sortModel);
                 }
             }

@@ -28,6 +28,7 @@ import matthew.pecompass.components.Model.Courses;
 import matthew.pecompass.components.Model.HighestRatedCourse;
 import matthew.pecompass.components.Model.Karma;
 import matthew.pecompass.components.Model.KarmaTask;
+import matthew.pecompass.components.Model.Notification;
 import matthew.pecompass.components.Model.UnratedCourse;
 import matthew.pecompass.components.Model.User;
 import matthew.pecompass.components.utils.Utils;
@@ -80,6 +81,17 @@ public class SplashActivity extends AppCompatActivity {
         makeKarmaTasks();
         Courses.allCourses=new HashMap<>();
         makeAllCourses();
+        Notification.notifications=new ArrayList<>();
+        makeNotifications();
+    }
+
+    private void makeNotifications() {
+        Notification.notifications.add("You have 5 tasks to finish: 2 from friends and 3 from " +
+                "system.");
+        Notification.notifications.add("Please pay more attention to your rating quality.");
+        Notification.notifications.add("Please rate your unrated courses to get karma.");
+        Notification.notifications.add("Now you can get more valuable rewards by using less karma" +
+                ".Check your account!");
     }
 
     private void makeAllCourses() {

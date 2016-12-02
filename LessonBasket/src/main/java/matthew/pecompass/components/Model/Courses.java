@@ -13,6 +13,7 @@ public class Courses {
     public static ArrayList<UnratedCourse> unratedCourses;
     public static Map<String,List<HighestRatedCourse>> highestRatedCourses;
     public static Map<String,Course> allCourses;
+    public static int shareTimes=3;
     //currentUnratedCrn
     public static int currUnratedCrn;
     public static int currHighestRatingGroupIndex;

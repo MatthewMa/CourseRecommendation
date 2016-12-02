@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -25,6 +28,10 @@ import android.widget.Toast;
 import matthew.pecompass.R;
 import matthew.pecompass.components.Constants.Constants;
 import matthew.pecompass.components.utils.Utils;
+
+import static android.view.View.inflate;
+import static matthew.pecompass.R.id.ib_notification;
+import static matthew.pecompass.R.layout.dialog_resetpassword;
 
 public class LoginActivity extends BaseActivity {
 
@@ -160,14 +167,30 @@ public class LoginActivity extends BaseActivity {
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                View view=View.inflate(LoginActivity.this,R.layout
+                View view= LayoutInflater.from(LoginActivity.this).inflate(R.layout
                         .dialog_resetpassword,null);
                 et_email= (EditText) view.findViewById(R.id.et_emailaddress);
                 btn_send= (Button) view.findViewById(R.id.btn_send);
                 btn_resetcancel= (Button) view.findViewById(R.id.btn_cancel);
-                final PopupWindow window=new PopupWindow(view,800,500);
-                window.showAtLocation(btn_reset, Gravity.CENTER,0,-100);
-                window.setAnimationStyle(R.style.popwin_anim_style);
+                final PopupWindow popupWindow = new PopupWindow(view,600,400);
+                popupWindow.setFocusable(true);
+                popupWindow.setBackgroundDrawable(new ColorDrawable(0x00000000));
+                // 设置PopupWindow以外部分的背景颜色  有一种变暗的效果
+                final WindowManager.LayoutParams wlBackground = getWindow().getAttributes();
+                wlBackground.alpha = 0.5f;      // 0.0 完全不透明,1.0完全透明
+                getWindow().setAttributes(wlBackground);
+                // 当PopupWindow消失时,恢复其为原来的颜色
+                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+                    @Override
+                    public void onDismiss() {
+                        wlBackground.alpha = 1.0f;
+                        getWindow().setAttributes(wlBackground);
+                    }
+                });
+                //设置PopupWindow进入和退出动画
+                popupWindow.setAnimationStyle(R.style.anim_popup_centerbar);
+                // 设置PopupWindow显示在中间
+                popupWindow.showAtLocation(btn_reset, Gravity.CENTER,0,0);
                 btn_send.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -178,11 +201,9 @@ public class LoginActivity extends BaseActivity {
                 btn_resetcancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        window.dismiss();
+                        popupWindow.dismiss();
                     }
                 });
-
-
             }
         });
     }
