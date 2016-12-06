@@ -79,6 +79,7 @@ public class ShareFragment extends Fragment {
         tv_coursedays= (TextView) v.findViewById(R.id.tv_coursedays);
         pb_courseavail= (ProgressBar) v.findViewById(R.id.pb_courseavail);
         tv_courseavail= (TextView) v.findViewById(R.id.tv_courseavail);
+
         tv_sharetimes= (TextView) v.findViewById(R.id.tv_sharetimes);
         tv_sharetimes.setText("You have "+Courses.shareTimes+" share right left!");
         atv_coursename.requestFocus();

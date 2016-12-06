@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import matthew.pecompass.R;
@@ -23,6 +25,16 @@ public class RecommendActivity extends Activity {
     private LinearLayout ll_videoview;
     private MediaController controller;
 
+    //Table Row
+    private TextView tv_coursename;
+    private TextView tv_coursecrn;
+    private TextView tv_instructorname;
+    private TextView tv_coursedays;
+    private ProgressBar pb_courseavail;
+    private TextView tv_courseavail;
+    private String coursename;
+    private String coursemsg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +43,14 @@ public class RecommendActivity extends Activity {
         btn_back= (Button) findViewById(R.id.btn_back);
         btn_select= (Button) findViewById(R.id.btn_select);
         ll_videoview= (LinearLayout) findViewById(R.id.ll_videoview);
+        //TableLayout
+        tv_coursename= (TextView) findViewById(R.id.tv_coursename);
+        tv_coursecrn= (TextView) findViewById(R.id.tv_coursecrn);
+        tv_instructorname= (TextView) findViewById(R.id.tv_instructorname);
+        tv_coursedays= (TextView) findViewById(R.id.tv_coursedays);
+        pb_courseavail= (ProgressBar) findViewById(R.id.pb_courseavail);
+        tv_courseavail= (TextView) findViewById(R.id.tv_courseavail);
+
         String uri = "android.resource://" + getPackageName() + "/" + R.raw.social_computing;
         controller = new MediaController(this);
         controller.setAnchorView(ll_videoview);

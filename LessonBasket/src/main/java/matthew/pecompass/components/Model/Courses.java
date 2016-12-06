@@ -18,13 +18,14 @@ public class Courses {
     public static int currUnratedCrn;
     public static int currHighestRatingGroupIndex;
     public static int currHighestRatingChildIndex;
+    public static double currKarma;
     //Unrated classes
     public static int[] courseCrn={306,332,355,360,370,394,400,405};
     public static String[] courseNames={"Game Mechanics","Operating Systems Concepts 1","Theory " +
             "and " +
             "Appl of Databases","Machines and Algorithms","Software Engineering 1","Simulation " +
             "Principles","Research","Project Design and Implement"};
-    public static int[] scores={89,77,82,85,76,79,81,69};
+    public static double[] scores={2.4,2.1,2.0,1.7,2.3,2.2,2.3,1.9};
 
     //highest rating classes
     //All:
@@ -59,7 +60,7 @@ public class Courses {
             "and " +
             "Appl of Databases","Machines and Algorithms","Software Engineering 1","Simulation " +
             "Principles","Research","Project Design and Implement","Social Computing","Mobile and" +
-            " Cloud Computing","Accessible Computing","Fdtns Concurrent Programming","Methods of " +
+            "Cloud Computing","Accessible Computing","Fdtns Concurrent Programming","Methods of " +
             "Applied Math I","Metric Spaces and Cont Funct","Linear Control Systems 1",
             "Experimental Fluid Mechanics","Finite Element Analysis","Heat Transfer"};
     public static List<String> allCourseNames= Arrays.asList(allCourseStrings);

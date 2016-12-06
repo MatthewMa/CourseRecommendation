@@ -33,6 +33,8 @@ import matthew.pecompass.components.Model.UnratedCourse;
 import matthew.pecompass.components.activities.RecommendActivity;
 import matthew.pecompass.components.utils.Utils;
 
+import static matthew.pecompass.R.string.account;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -62,11 +64,12 @@ public class RatingFragment extends Fragment {
         if(removeUnratedId!=-1){
             Courses.unratedCourses.remove(removeUnratedId);
             Utils.ToastPositiveDialog(getActivity(),"Finish rating","Congratulations,you have " +
-                    "finished the rating and get 2 karma, please check your account!",R.drawable
+                    "finished the rating and get"+Courses.currKarma+ "karma, please check your " +
+                    "account!",R.drawable
                     .rating_congra,0);
             //add rated courses:
             //add currKarma
-            Karma.currKarma+=2;
+            Karma.currKarma+=Courses.currKarma;
             getActivity().getIntent().putExtra("finishUnratedCrn",-1);
         }
         spinner_condition.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout
@@ -197,9 +200,13 @@ public class RatingFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Courses.currUnratedCrn=position;
+                Courses.currKarma=Courses.unratedCourses.get(position).getScore();
                 //do survey:
                 Utils.ToastPositiveAndNegativeDialog(RatingFragment.this.getActivity(),"Begin " +
-                        "Rating","Now let us do a rating survey and you can get 2 karma when you " +
+                        "Rating","Now let us do a rating survey and you can get"+Courses.currKarma
+                        +"karma when " +
+                        "you" +
+                        " " +
                         "finish it.Thanks for your cooperation.",R.drawable.help, Constants.JUMP_TO_RATING);
             }
         });

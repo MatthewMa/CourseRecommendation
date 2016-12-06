@@ -246,7 +246,8 @@ public class IndexActivity extends BaseActivity {
     }
 
     private void updateBtnStart() {
-        if(currIndex<Notification.notifications.size()-1){
+        if(currIndex<Notification.notifications.size()-1
+                ){
             btn_start.setText("NEXT");
         }else{
             btn_start.setText("GET STARTED");

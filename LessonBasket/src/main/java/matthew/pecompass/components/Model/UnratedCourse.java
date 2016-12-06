@@ -6,9 +6,9 @@ package matthew.pecompass.components.Model;
 public class UnratedCourse {
     private int crn;
     private String coursename;
-    private float score;
+    private double score;
 
-    public UnratedCourse(int crn, String coursename, float score) {
+    public UnratedCourse(int crn, String coursename, double score) {
         this.crn = crn;
         this.coursename = coursename;
         this.score = score;
@@ -30,11 +30,11 @@ public class UnratedCourse {
         this.coursename = coursename;
     }
 
-    public float getScore() {
+    public double getScore() {
         return score;
     }
 
-    public void setScore(float score) {
+    public void setScore(double score) {
         this.score = score;
     }
 }

@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Karma {
     //currKarma
-    public static int currKarma=20;
+    public static double currKarma=20.0;
     //highest Karma users
     public static List<User> highestKarmaUsers;
     public static List<String> taskNames;
@@ -22,9 +22,11 @@ public class Karma {
             "Optimal Control"};
     public static String[] systemKarmaTasks={"Share one of your favorite courses to your friend through sending " +
             "a message" ,"Please select " +
-            "Course: Social Computing,it has only 8 seats available","Sharing a course on " +
+            "Course: Social Computing,it has only 8 seats available",
+            "Sharing a " +
+            "course on " +
             "Facebook"};
     public static int[] friendKarmaRewards={2,2};
-    public static int[] systemKarmaRewards={3,4,2};
+    public static int[] systemKarmaRewards={2,4,2};
 
 }

@@ -88,7 +88,6 @@ public class SplashActivity extends AppCompatActivity {
     private void makeNotifications() {
         Notification.notifications.add("You have 5 tasks to finish: 2 from friends and 3 from " +
                 "system.");
-        Notification.notifications.add("Please pay more attention to your rating quality.");
         Notification.notifications.add("Please rate your unrated courses to get karma.");
         Notification.notifications.add("Now you can get more valuable rewards by using less karma" +
                 ".Check your account!");
@@ -130,6 +129,7 @@ public class SplashActivity extends AppCompatActivity {
                     .allCourseCrns[i],Courses.allCourseInstructors[i],3,days,"5:00pm-7:50pm",
                     avail,20,"06 Sep.-08 Dec.","Throv S386",Courses.allCourseRates[i]));
         }
+        Courses.allCourses.get("Social Computing").avail=8;
     }
 
     private void makeKarmaTasks() {
